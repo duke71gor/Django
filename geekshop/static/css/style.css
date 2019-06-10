@@ -1,7 +1,7 @@
 body {
     /* 2-Цвет фона */
     background: #f8f8f8;
-    background-image: url("img/images.jpg");
+    background-image: url("../img/images.jpg");
     background-repeat: repeat;
     background-color: #cccccc;
 }
@@ -31,7 +31,7 @@ body {
     /* 3A-меню сайта, создание определенного стиля*/
     /* цвет полдожки */
     background-color: #fafafa;
-    background-image: url("img/background_light.jpg");
+    background-image: url("../img/background_light.jpg");
     background-repeat: repeat;
     /* шрифт*/
     font: 16px Tahoma;
@@ -117,7 +117,7 @@ p:first-letter {
     color: black;
     font-size: 18px;
     font-weight: 400;
-    background-image: url("img/background_light.jpg");
+    background-image: url("../img/background_light.jpg");
     background-repeat: repeat background: #eaeaea;
     clear: both;
 }
@@ -225,7 +225,7 @@ a.button {
 a.button:hover {
     /* при наведении курсора мышки */
     color: black;
-    background-image: url("img/background_light.jpg");
+    background-image: url("../img/background_light.jpg");
 }
 
 a.button:active {
@@ -237,7 +237,7 @@ a.button:active {
     /* 2-Цвет фона */
     clear: both;
     background: #f8f8f8;
-    background-image: url("img/geekbrains.png");
+    background-image: url("../img/geekbrains.png");
     background-color: transparent;
     height: 100px;
     font-weight: 800;

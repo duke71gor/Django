@@ -1,36 +1,32 @@
-<!DOCTYPE html>
-<html lang="ru">
+{% extends 'mainapp/base.html' %}
+{% load static %}
 
-<head>
-    <meta charset="UTF-8">
-    <title>Главная</title>
-    <link rel="stylesheet" type="text/css" href="/static/style.css">
-    <!-- <link rel="stylesheet" href="/static/fonts/font-awesome/css/font-awesome.css"> -->
-</head>
+{% block title %}
+    Главная
+{% endblock %}
 
-<body>
-    <div class='container'>
-        <div class='logo'>
-            <img src='/static/img/pen-icon-71.png' width=100%>
-        </div>
-        <div class="header">
-            <ul class="menu">
-                <li><a href="/index/" class="active">ДОМОЙ</a></li>
-                <li><a href="/products/">КАТАЛОГ</a></li>
-                <li><a href="/contact/">&#9742 КОНТАКТЫ</a></li>
-            </ul>
- <!--           <ul class="menu">
-                <li><a href='index.html'>ГЛАВНАЯ</a></li>
-                <li><a href='products.html'>КАТАЛОГ</a></li>
-                <li><a href='contact.html'>&#9742 КОНТАКТЫ</a></li>
-            </ul> -->
-        </div>
-    </div>
+{% block css %}
+    <link rel="stylesheet" type="text/css" href="{% static '/css/style.css' %}">
+{% endblock %}
 
+<!-- <link rel="stylesheet" href="/static/fonts/font-awesome/css/font-awesome.css"> -->
 
+{% block header %}
+    {% include 'mainapp/includes/inc_header.html' %}
+{% endblock %}
+
+{% block content %}
     <div class='main'>
         <hr>
         <h1>Магазин "PenExpress" </h1>
+        <div>
+            <h2>Hello, {{ username }}!</h2>
+            <ul>
+                {% for item in array %}
+                    <li>element {{ item }}</li>
+                {% endfor %}
+            </ul>
+        </div>
         <p>Приветствует Вас, дорогоай наш покупатель, в нашем интернет-магазине 'PenExpress'.</p>
         <p>Вот в продажу тебе ручка, <br>Чтобы что-то записать, <br>Важные заметки делать, <br>В списках пункты отмечать.</p>
         <p>Подписи желаешь ставить <br>На весомых документах, <br>Пусть тебе поможет ручка <br>В важных жизненных моментах.</p>
@@ -41,11 +37,8 @@
         <h4>Наш девиз:</h4>
         <h3>"Лучше тупое перо, чем острая память"</h3>
     </div>
-    <hr>
-    <div class='footer'>
-        <p>&copy; 2019 "Все права защищены" <a href="https://geekbrains.ru/">GeekBrains</a> </p>
-    </div>
-    <hr>
-</body>
+{% endblock %}
 
-</html>
+{% block footer %}
+    {% include 'mainapp/includes/inc_footer.html' %}
+{% endblock %}
