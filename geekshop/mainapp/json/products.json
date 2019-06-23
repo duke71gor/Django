@@ -1,0 +1,26 @@
+[
+    {
+        "category": "soft dools",
+        "name": "Barbara",
+        "price": 1000,
+        "quantity": 5
+    },
+    {
+        "category": "soft dools",
+        "name": "Kiryl",
+        "price": 1500,
+        "quantity": 15
+    },
+    {
+        "category": "hard cars",
+        "name": "Ferari F-50",
+        "price": 1200,
+        "quantity": 21
+    },
+    {
+        "category": "hard cars",
+        "name": "Fordbird",
+        "price": 1400,
+        "quantity": 12
+    }
+]
