@@ -1,36 +1,27 @@
 <!DOCTYPE html>
-{% load static %}
-<html lang="ru">
-
+<html lang="en">
 <head>
     <meta charset="UTF-8">
 
-    <title>
-        {% block title %}
-            {{ title|title }}
-        {% endblock %}
-    </title>
+    {% block title %}
+    {%  endblock %}
 
 
     {% block css %}
     {% endblock %}
 
-    {% block font %}
-    {% endblock %}
-
-    {% block js %}
-    {% endblock %}
-
 </head>
-
 <body>
-    {% block header %}
-    {% endblock %}
+{% include 'mainapp/includes/inc_menu.html' %}
 
-    {% block content %}
-    {% endblock %}
+{% block content %}
+{% endblock %}
 
-    {% block footer %}
-    {% endblock %}
+{% block js %}
+{% endblock %}
+
+{% block footer %}
+{% endblock %}
+
 </body>
 </html>

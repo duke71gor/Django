@@ -1,9 +1,12 @@
 from django.db import models
 
-# Create your models here.
-from django.db import models
+# Create your models here для Базы Данных
 
 class ProductCategory(models.Model):
+    class Meta:
+        verbose_name = 'Катеория'
+        verbose_name_plural = 'Категории'
+
     name = models.CharField(verbose_name='имя', max_length=64, unique=True)
     description = models.TextField(verbose_name='описание', blank=True)
 
@@ -11,6 +14,10 @@ class ProductCategory(models.Model):
         return self.name
 
 class Product(models.Model):
+    class Meta:
+        verbose_name = 'Продукт'
+        verbose_name_plural = 'Продукты'
+
     category = models.ForeignKey(ProductCategory, on_delete=models.CASCADE)
     name = models.CharField(verbose_name='имя продукта', max_length=128)
     image = models.ImageField(upload_to='products_images', blank=True)
@@ -21,3 +28,4 @@ class Product(models.Model):
 
     def __str__(self):
         return f"{self.name} ({self.category.name})"
+        # return "{} ({})".format(self.name, self.category.name)

@@ -1,36 +1,24 @@
 from django.shortcuts import render
+import json, os
+from .models import Product
 
-# Create your views here.
+JSON_PATH = 'mainapp/json'
+
+def loadMenuFromJSON():
+    with open(os.path.join(JSON_PATH, 'menu.json'), 'r') as infile:
+        return json.load(infile)
+
 def main(request):
-    return render(request, 'mainapp/main.html', {'username': 'Vanya', 'array': [1, 2, 3, 4, 5]})
+    links_menu = loadMenuFromJSON()
+    context = {'links_menu': links_menu, 'username': 'alexey'}
+    return render(request, 'mainapp/main.html', context)
 
 def products(request):
-    links_menu = [
-        {'href': 'products_all', 'name': 'все'},
-        {'href': 'products_home', 'name': 'дом'},
-        {'href': 'products_office', 'name': 'офис'},
-        {'href': 'products_modern', 'name': 'модерн'},
-        {'href': 'products_classic', 'name': 'классика'},
-    ]
-    title = ['Главная', 'Каталог', 'Контакты']
-    same_products = ['products_all', 'products_home', 'products_office', 'products_modern', 'products_classic']
-    content = {
-        'title': title,
-        'links_menu': links_menu,
-        'same_products': same_products
-    }
-    return render(request, 'mainapp/products.html', content)
+    links_menu = loadMenuFromJSON()
+    context = {'links_menu': links_menu, 'products': Product.objects.all()}
+    return render(request, 'mainapp/products.html', context)
 
-def contact(request):
-    return render(request, 'mainapp/contact.html')
-
-
-from .models import ProductCategory, Product
-
-def main(request):
-    title = 'главная'
-
-    products = Product.objects.all()[:4]
-
-    content = {'title': title, 'products': products}
-    return render(request, 'mainapp/main.html', content)
+def contacts(request):
+    links_menu = loadMenuFromJSON()
+    context = {'links_menu': links_menu}
+    return render(request, 'mainapp/contacts.html', context)
