@@ -1,12 +1,19 @@
 <div class='container'>
     <div class='logo'>
-        <img src='/static/img/pen-icon-71.png' width=100%>
+        <img src='/static/img/toy-logo.png' alt="logo" width="100" height="100">
     </div>
     <div class="header">
-        <ul class="menu">
-            <li><a href="{% url 'main' %}">ГЛАВНАЯ</a></li>
-            <li><a href="{% url 'products' %}">КАТАЛОГ</a></li>
-            <li><a href="{% url 'contact' %}">&#9742 КОНТАКТЫ</a></li>
+        <ul class="menu" class="links-menu">
+            {% for link in links_menu %}
+                <li>
+                    <a href="{% url link.href %}"
+                        class="{% if request.resolver_match.url_name == link.href %}
+                                    active
+                                {% endif %}">
+                        {{ link.name }}
+                    </a>
+                </li>
+            {% endfor %}
         </ul>
     </div>
 </div>

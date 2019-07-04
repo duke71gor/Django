@@ -1,25 +1,25 @@
 [
     {
-        "category": "soft dools",
-        "name": "Barbara",
+        "category": "Мягкие игрушки",
+        "name": "Винни-Пух",
         "price": 1000,
         "quantity": 5
     },
     {
-        "category": "soft dools",
-        "name": "Kiryl",
+        "category": "Мягкие игрушки",
+        "name": "Потапыч",
         "price": 1500,
         "quantity": 15
     },
     {
-        "category": "hard cars",
-        "name": "Ferari F-50",
+        "category": "Машинки",
+        "name": "Фэрари Ф-50",
         "price": 1200,
         "quantity": 21
     },
     {
-        "category": "hard cars",
-        "name": "Fordbird",
+        "category": "Машинки",
+        "name": "Форд Модель 'T'",
         "price": 1400,
         "quantity": 12
     }

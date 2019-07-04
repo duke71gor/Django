@@ -2,39 +2,39 @@
 {% load static %}
 
 {% block title %}
-    Каталог
+    kаталог
 {% endblock %}
 
 {% block css %}
     <link rel="stylesheet" type="text/css" href="{% static '/css/style.css' %}">
 {% endblock %}
 
-<!-- <link rel="stylesheet" href="/static/fonts/font-awesome/css/font-awesome.css"> -->
 
 {% block header %}
     {% include 'mainapp/includes/inc_header.html' %}
 {% endblock %}
-    {% include 'mainapp/includes/inc_categories_menu.html' %}
+
+{% include 'mainapp/includes/inc_categories_menu.html' %}
+
 {% block content %}
    <div class='main'>
         <hr>
-        <h1>Каталог</h1>
-
-    </div>
-    <div class='contCat'>
-        <div>
-            <a href='#' target="_blank"><img class='img' src='/static/img/acmecn_craving.jpg' width=100%></a>
-        </div>
-        <div>
-            <a class='textCat' href="#">Craving ACMECN шариковая ручка, унисекс, с поворотным механизмом открытия, индивидуальный дизайн, латунь - симпатичное тиснение.</a>
-        </div>
-        <div>
-            <a href='#' target="_blank"><img class='img' src='/static/img/acmecn_Deboss.jpg' width=100%></a>
-        </div>
-        <div>
-            <a class='textCat' href='#'>ACMECN Hi-tech металлическая перьевая тяжелая ручка уникального дизайна "Deboss", 46г., латунь, c чернильным картриджем</a>
-        </div>
-    </div>
+        <h1>Каталог!!!</h1>
+        <ul>
+            {% for product in products %}
+                <div class="block">
+                    <a href="#">
+                        <img src="/media/{{ product.image }}" alt="{{ product.short_desc }}">
+                        <div class="text">
+                            <h3>{{ product.category.name }}</h3>
+                            <h4>{{ product.name }}</h4>
+                            <p>{{ product.description }}</p>
+                        </div>
+                    </a>
+                </div>
+            {% endfor %}
+        </ul>
+   </div>
 {% endblock %}
 
 {% block footer %}
