@@ -1,0 +1,159 @@
+body {
+    /* фон */
+    background-image: url("../img/images.jpg");
+    background-repeat: repeat;
+}
+
+.header {
+    /*родительский блок Header для блока Logo & Menu*/
+    width: 1200px;
+    /*центрирование - по центру*/
+    margin: 0 auto;
+    /* шрифт*/
+    font: 16px Tahoma;
+    /*цвет текста*/
+    color: darkcyan;
+}
+
+.logo {
+    /* Выравнивание по левому краю*/
+    float: left;
+}
+
+.menu {
+    /*убираем левый отступ, равный 40px*/
+    margin-left: 20px;
+    padding-top: 20px;
+    text-align: center;
+    font: 20px Tahoma;
+}
+
+.menu-item {
+
+}
+
+.menu li {
+    /*менюшка --> горизонт*/
+    display: inline-block;
+    /* цвет полдожки */
+    background-image: url("../img/background_light.jpg");
+    background-repeat: repeat;
+
+}
+
+.menu li a {
+    /*убираем подчеркивание текста ссылок*/
+    text-decoration: none;
+    display: block;
+    line-height: 40px;
+    width: 140px;
+    padding-left: 10px;
+    padding-right: 10px;
+    clear: both;
+    border: 2px solid darkorange;
+}
+
+.menu li:before {
+    /*Убираем изображение в качестве маркера для меню*/
+    content: '';
+}
+
+.menu li a:hover {
+    color: darkgoldenrod;
+
+}
+
+.menu li a:active {
+    color: yellow;
+}
+
+.main {
+    clear: both;
+}
+
+.category-products {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.block {
+    margin: 20px;
+    border: 2px solid darkorange;
+}
+
+.block div {
+    padding: 5px; /* Поля вокруг текста */
+    float: left; /* Обтекание по правому краю */
+    width: 236px; /* Ширина слоя */
+    display: inline-block;
+}
+
+input[type=text],
+input[type=password],
+input[type=email],
+input[type=tel] {
+    width: 200px;
+    height: 18px;
+    /*color after typing*/
+    color: blueviolet;
+    background-color: beige;
+    font-size: 14px;
+}
+
+textarea {
+    background-color: beige;
+}
+
+input::-webkit-input-placeholder {
+    /*color before type*/
+    color: red;
+    background-color: aqua;
+}
+
+.card {
+    width: 18rem;
+}
+
+.card-img-top {
+    display: block;
+    margin-left: auto;
+    margin-right: auto
+}
+
+.card-body {
+    font: 1.0rem "Arial Black";
+    text-align: center
+}
+
+.card-body a {
+    color: darkorange;
+}
+
+.card-body a:hover {
+    color: black;
+}
+
+.card-body a:active {
+    color: yellow;
+}
+.card-title{
+
+}
+
+.card-text {
+
+}
+
+.footer {
+    /* 2-Цвет фона */
+    clear: both;
+    background: #f8f8f8;
+    background-image: url("../img/geekbrains.png");
+    background-color: transparent;
+    height: 100px;
+    font-weight: 800;
+    color: darkorange;
+    text-align: right;
+    padding-top: 150px;
+    padding-right: 50px;
+}

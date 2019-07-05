@@ -1,0 +1,35 @@
+<div class='header'>
+    <div class='logo'>
+        <img src='/static/img/toy-logo.png' alt="logo" width="100" height="100">
+    </div>
+    <div>
+        <ul class="menu">
+            <li>
+                <a href="{% url 'main' %}"
+                   class="{% if request.resolver_match.url_name == 'main' %}
+                            active
+                           {% endif %}">
+                    Главная
+                </a>
+            </li>
+            <li>
+                <a href="{% url 'products:index' %}"
+                   class="{% if request.resolver_match.namespace == 'products' %}
+                            active
+                          {% endif %}">
+                    Продукты
+                </a>
+            </li>
+            <li>
+                <a href="{% url 'contact' %}"
+                   class="{% if request.resolver_match.url_name == 'contact' %}
+                           active
+                          {% endif %}">
+                    Контакты
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>
+
+
