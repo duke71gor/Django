@@ -1,0 +1,22 @@
+<div class='header'>
+    <div>
+        <ul class="menu">
+            <li>
+                <a href="{% url 'admin_custom:products' %}"
+                   class="{% if request.resolver_match.url_name == 'admin' %}
+                            active
+                           {% endif %}">
+                    Категории/Продукты
+                </a>
+            </li>
+            <li>
+                <a href="{% url 'admin_custom:users' %}"
+                   class="{% if request.resolver_match.namespace == 'users' %}
+                            active
+                          {% endif %}">
+                    Пользователи
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>

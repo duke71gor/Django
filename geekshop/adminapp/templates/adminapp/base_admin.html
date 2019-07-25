@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+
+    {% block css %}
+        <link rel="stylesheet" type="text/css" href="{% static '/css/style_admin.css' %}">
+    {% endblock %}
+
+    <title>
+        {% block title %}
+            {{ title|title }}
+        {% endblock %}
+    </title>
+</head>
+
+<body>
+    {% block header %}
+    {% endblock %}
+    {% include 'adminapp/includes/inc_header.html' %}
+
+    <div class="main">
+        {% block content %}
+        {% endblock %}
+    </div>
+</body>
+</html>

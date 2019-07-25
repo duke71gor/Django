@@ -1,0 +1,54 @@
+body {
+    /* фон */
+    background-image: url("../img/images_admin.jpg");
+    background-repeat: repeat;
+}
+
+.main {
+    margin: 0 auto;
+    padding: 10px;
+    background-image: url("../img/background_light.jpg");
+    background-color: beige;
+    border: 2px solid darkorange;
+}
+
+.menu {
+    /*убираем левый отступ, равный 40px*/
+    margin-left: 20px;
+    padding-top: 20px;
+    text-align: center;
+    font: 20px Tahoma;
+}
+
+.menu li {
+    /*менюшка --> горизонт*/
+    display: inline-block;
+    /* цвет полдожки */
+    background-image: url("../img/background_light.jpg");
+    background-repeat: repeat;
+}
+
+.menu li a {
+    /*убираем подчеркивание текста ссылок*/
+    text-decoration: none;
+    display: block;
+    line-height: 40px;
+    width: 240px;
+    padding-left: 10px;
+    padding-right: 10px;
+    clear: both;
+    border: 2px solid darkorange;
+}
+
+.menu li:before {
+    /*Убираем изображение в качестве маркера для меню*/
+    content: '';
+}
+
+.menu li a:hover {
+    color: darkgoldenrod;
+}
+
+.menu li a:active {
+    color: yellow;
+}

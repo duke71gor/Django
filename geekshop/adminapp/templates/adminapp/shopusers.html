@@ -1,0 +1,18 @@
+{% extends 'adminapp/base_admin.html' %}
+{% load static %}
+
+{% block content %}
+    <h2>Пользователи</h2>
+    <ol>
+        {% for object in object_list %}
+            <li>
+                <a href="{% url 'admin_custom:users' %}">{{ object.username }}</a>
+            </li>
+        {% endfor %}
+    </ol>
+    <a href="{% url 'admin_custom:user_create' %}">Создать нового пользователя</a>
+    <br>
+    <a href="{% url 'admin_custom:user_update' pk=1 %}">Обновить пользователя</a>
+    <br>
+    <a href="{% url 'admin_custom:user_delete' pk=2 %}">Удалить пользователя</a>
+{% endblock %}

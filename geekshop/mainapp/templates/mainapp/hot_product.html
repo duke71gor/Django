@@ -1,0 +1,34 @@
+{% extends 'mainapp/base.html' %}
+{% load custom_tags %}
+
+{% block title %}
+    продукты
+{% endblock %}
+
+{% block content %}
+    <hr>
+    <br>
+    <h1>Категории:</h1>
+    {% include 'mainapp/includes/inc_categories_menu.html' %}
+    <h2>Продукты:</h2>
+    <div>Количество продуктов в корзине: {{ request.user|basket_total_quantity }}</div>
+    <div>Общая стоимость корзины: {{ request.user|basket_total_cost }} руб.</div>
+    <div style="display: flex; flex-wrap: wrap;" class="category-products clearfix">
+        <div class="block">
+            <div class="card">
+                <img src="/media/{{ hot_product.image }}" class='card-img-top' alt="hot_product">
+                <div class="card-body">
+                    <h2 style="color: red">ГОРЯЧЕЕ ПРЕДЛОЖЕНИЕ</h2>
+                    <h3 class="card-title">{{ hot_product.name }}</h3>
+                    <a>Скидка {{ discount }} %</a>
+                    <h4 class="card-title">Цена: {{ hot_product.price }} руб.</h4>
+                    <p class="card-text">{{ hot_product.short_desc }}</p>
+                    <div style="color: orangered">На складе осталось {{ hot_product.quantity }} единиц товара. Спешите!</div>
+                    <a href="{% url 'basket:add' hot_product.pk %}">Добавить в корзину</a>
+                    <br>
+                    <a href="{% url 'basket:remove' hot_product.pk %}">Удалить из корзины</a>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

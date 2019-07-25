@@ -1,0 +1,25 @@
+{% extends 'mainapp/base.html' %}
+{% load static %}
+
+{% block title %}
+    rлавная
+{% endblock %}
+
+<!-- <link rel="stylesheet" href="/static/fonts/font-awesome/css/font-awesome.css"> -->
+
+{% block content %}
+    <div class='main'>
+        <hr>
+        <h1>Магазин Игрушек</h1>
+            {% if request.user.is_authenticated %}
+                <h2>Привет, {{ request.user.username|title }}!</h2>
+            {% else %}
+                <h2>Привет, аноним!</h2>
+            {% endif %}
+        <div class="card-body">
+            <a href="{% url 'auth:logout' %}">Выйти</a><br>
+            <a href="#">Редактировать профиль</a><br>
+            <a href="{% url 'authapp:register' %}">Зарегестрироваться</a><br>
+        </div>
+    </div>
+{% endblock %}

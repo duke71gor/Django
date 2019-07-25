@@ -1,0 +1,12 @@
+{% extends 'adminapp/base_admin.html' %}
+{% load static %}
+
+{% block content %}
+    <form class="form-horizontal" method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="Применить">
+        <br>
+        <a href="{% url 'admin_custom:products' %}"><-- Все Категории / Продукты</a>
+    </form>
+{% endblock %}

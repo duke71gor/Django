@@ -1,0 +1,6 @@
+django==2.2.2
+django-debug-toolbar==2.0
+ipython==7.6.0
+pillow==5.4.1
+pip-chill==0.1.8
+virtualenv==16.6.0
