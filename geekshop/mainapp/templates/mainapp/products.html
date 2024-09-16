@@ -1,0 +1,14 @@
+{% extends 'mainapp/base.html' %}
+
+{% block title %}
+    <title>Продукты</title>
+{% endblock %}
+
+{% block content %}
+    <h1>Продукты!!!</h1>
+    <ul>
+        {% for product in products %}
+            <li>{{ product.name }}</li>
+        {% endfor %}
+    </ul>
+{% endblock %}
