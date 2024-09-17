@@ -1,0 +1,42 @@
+{% extends 'mainapp/base.html' %}
+{% load static %}
+
+{% block title %}
+    kаталог
+{% endblock %}
+
+{% block css %}
+    <link rel="stylesheet" type="text/css" href="{% static '/css/style.css' %}">
+{% endblock %}
+
+
+{% block header %}
+    {% include 'mainapp/includes/inc_header.html' %}
+{% endblock %}
+
+{% include 'mainapp/includes/inc_categories_menu.html' %}
+
+{% block content %}
+   <div class='main'>
+        <hr>
+        <h1>Каталог!!!</h1>
+        <ul>
+            {% for product in products %}
+                <div class="block">
+                    <a href="#">
+                        <img src="/media/{{ product.image }}" alt="{{ product.short_desc }}">
+                        <div class="text">
+                            <h3>{{ product.category.name }}</h3>
+                            <h4>{{ product.name }}</h4>
+                            <p>{{ product.description }}</p>
+                        </div>
+                    </a>
+                </div>
+            {% endfor %}
+        </ul>
+   </div>
+{% endblock %}
+
+{% block footer %}
+    {% include 'mainapp/includes/inc_footer.html' %}
+{% endblock %}

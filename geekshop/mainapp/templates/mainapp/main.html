@@ -1,0 +1,32 @@
+{% extends 'mainapp/base.html' %}
+{% load static %}
+
+{% block title %}
+    rлавная
+{% endblock %}
+
+{% block css %}
+    <link rel="stylesheet" type="text/css" href="{% static '/css/style.css' %}">
+{% endblock %}
+
+<!-- <link rel="stylesheet" href="/static/fonts/font-awesome/css/font-awesome.css"> -->
+
+{% block header %}
+    {% include 'mainapp/includes/inc_header.html' %}
+{% endblock %}
+
+{% block content %}
+    <div class='main'>
+        <hr>
+        <h1>Магазин Игрушек</h1>
+            {% if request.user.is_authenticated %}
+                <h2>Привет, {{ request.user.username|title }}!</h2>
+            {% else %}
+                <h2>Привет, аноним!</h2>
+            {% endif %}
+    </div>
+{% endblock %}
+
+{% block footer %}
+    {% include 'mainapp/includes/inc_footer.html' %}
+{% endblock %}

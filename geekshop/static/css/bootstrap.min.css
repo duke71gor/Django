@@ -1,0 +1,9 @@
+.form-horizontal {
+    width: 170 px;
+    height: 18 px;
+    /*color after typing*/
+    color: blueviolet;
+    background-color: beige;
+    font-size: 14px;
+}
+

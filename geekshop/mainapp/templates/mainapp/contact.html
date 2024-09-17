@@ -1,0 +1,25 @@
+{% extends 'mainapp/base.html' %}
+{% load static %}
+
+{% block title %}
+    kонтакты
+{% endblock %}
+
+{% block css %}
+    <link rel="stylesheet" type="text/css" href="{% static '/css/style.css' %}">
+{% endblock %}
+
+{% block header %}
+    {% include 'mainapp/includes/inc_header.html' %}
+{% endblock %}
+
+{% block content %}
+    <div class='main'>
+        <hr>
+        <h1>Контакты!#!</h1>
+    </div>
+{% endblock %}
+
+{% block footer %}
+    {% include 'mainapp/includes/inc_footer.html' %}
+{% endblock %}

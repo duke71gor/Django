@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+{% load static %}
+
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+
+    <title>
+        {% block title %}
+            {{ title|title }}
+        {% endblock %}
+    </title>
+
+
+    {% block css %}
+    {% endblock %}
+
+    {% block font %}
+    {% endblock %}
+
+    {% block js %}
+    {% endblock %}
+
+</head>
+
+<body>
+    {% block header %}
+    {% endblock %}
+
+    {% block content %}
+    {% endblock %}
+
+    {% block footer %}
+    {% endblock %}
+</body>
+</html>
